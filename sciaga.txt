@@ -1,0 +1,11 @@
+/
+/home/uczen/ == ~
+cd ...
+ls
+touch ...txt - tworzenie plików
+mcedit/nano ... - edycja plików
+mkdir ... - tworzenie folderu
+rm ...txt - usunięcie plików
+rm -r ... - usunięcie całego folderu
+./skrypt.sh - odpalenie skryptu
+chmod +x ...sh - nadanie praw do wykonania skryptu
