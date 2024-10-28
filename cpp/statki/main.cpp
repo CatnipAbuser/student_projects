@@ -3,12 +3,18 @@
 using namespace std;
 
 int main() {
-	int statekX = 4;
-	int statekY = 7;
+	int statekX;
+	int statekY;
 	int x, y;
-	cout<<"Na planszy znajduje się 1 statek o wielkości 1x1"<<endl;
-
-	for (int strzal = 5; strzal > 0; strzal--) {
+	cout<<"Podaj współrzędne statku na planszy 3x3"<<endl;
+		cout<<"współrzędne x:";
+		cin>>statekX;
+		cout<<"współrzędne y;";
+		cin>>statekY;
+	
+	cout<<"Na planszy 3x3 znajduje się 1 statek o wielkości 1x1"<<endl;
+ 
+	for (int strzal = 1; strzal > 0; strzal--) {
 	cout<<"Podaj wstpółrzędne strzału x:";
 	cin>>x;
 	cout<<"Podaj wstpółrzędne strzału y:";
@@ -18,7 +24,8 @@ int main() {
 			cout <<"Trafiony zatopiony!"<< endl;
 			break;
 		} else {
-			cout<<"Pudło! Zostały "<< strzal -1<<" naboje!"<< endl;
+			cout<<"Przegrałeś"<< endl;
+			break;
 		}
 
 	}
