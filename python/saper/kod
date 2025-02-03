@@ -1,1 +1,46 @@
+import random
+
+def initialize_board():
+    board = [['?' for _ in range(3)] for _ in range(3)]
+    bombs_placed = 0
+    while bombs_placed < 2:
+        x = random.randint(0, 2)
+        y = random.randint(0, 2)
+        if board[x][y] != 'B':
+            board[x][y] = 'B'
+            bombs_placed += 1
+    return board
+
+def display_board(board):
+    for row in board:
+        print(' '.join(row))
+    print()
+
+def check_victory(board):
+    for row in board:
+        if '?' in row:
+            return False
+    return True
+
+def play_game():
+    board = initialize_board()
+    hidden_board = [['?' for _ in range(3)] for _ in range(3)]
+    game_over = False
+
+    while not game_over:
+        display_board(hidden_board)
+        x = int(input('Podaj współrzędną x (0-2): '))
+        y = int(input('Podaj współrzędną y (0-2): '))
+
+        if board[x][y] == 'B':
+            print('Trafiłeś na bombę! Koniec gry.')
+            game_over = True
+        else:
+            hidden_board[x][y] = 'V'
+            if check_victory(hidden_board):
+                print('Gratulacje, odkryłeś wszystkie pola bez bomb! Wygrałeś!')
+                game_over = True
+
+if __name__ == '__main__':
+    play_game()
 
